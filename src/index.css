@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BEW Games Design System - Pixel Art Gaming Theme
+All colors MUST be HSL. Inspired by retro 2D RPG aesthetics.
+*/
+
+@layer base {
+  :root {
+    /* Core Background Colors */
+    --background: 230 35% 7%;
+    --foreground: 210 40% 98%;
+
+    /* Card Components */
+    --card: 231 39% 10%;
+    --card-foreground: 210 40% 98%;
+
+    /* Popover Components */
+    --popover: 231 39% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary Brand Colors - Electric Purple */
+    --primary: 270 91% 65%;
+    --primary-foreground: 230 35% 7%;
+    --primary-glow: 270 91% 75%;
+
+    /* Secondary Colors - Neon Blue */
+    --secondary: 195 100% 50%;
+    --secondary-foreground: 230 35% 7%;
+
+    /* Muted Colors */
+    --muted: 231 39% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* Accent Colors - Neon Green */
+    --accent: 120 100% 50%;
+    --accent-foreground: 230 35% 7%;
+
+    /* Success/Game Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+
+    /* Destructive Colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border & Input */
+    --border: 231 39% 18%;
+    --input: 231 39% 18%;
+    --ring: 270 91% 65%;
+
+    /* Game Stats Colors */
+    --game-stat: 45 100% 60%;
+    --game-stat-foreground: 230 35% 7%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(270 91% 65%), hsl(195 100% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(230 35% 7%) 0%, hsl(231 39% 10%) 50%, hsl(270 91% 15%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(231 39% 10%) 0%, hsl(231 39% 12%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(270 91% 65% / 0.3) 0%, transparent 70%);
+
+    /* Shadows */
+    --shadow-pixel: 0 4px 8px hsl(270 91% 65% / 0.3);
+    --shadow-glow: 0 0 20px hsl(270 91% 65% / 0.5);
+    --shadow-card: 0 8px 32px hsl(230 35% 4% / 0.8);
+
+    /* Animation Timings */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Light theme (optional - keeping consistent with dark gaming theme) */
+  .light {
+    --background: 210 40% 98%;
+    --foreground: 230 35% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 230 35% 7%;
+    --primary: 270 91% 65%;
+    --primary-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Pixel Art Grid Pattern */
+  .pixel-grid {
+    background-image: 
+      linear-gradient(hsl(270 91% 65% / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(270 91% 65% / 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Gaming Glow Effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px hsl(270 91% 65% / 0.8);
+  }
+
+  /* Pixel Button Animation */
+  .pixel-button {
+    @apply relative overflow-hidden;
+    transition: var(--transition-bounce);
+  }
+
+  .pixel-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0.2;
+    transition: left 0.5s ease;
+  }
+
+  .pixel-button:hover::before {
+    left: 100%;
+  }
+
+  /* Game Stats Counter Animation */
+  .stat-counter {
+    @apply font-bold text-2xl;
+    color: hsl(var(--game-stat));
+    text-shadow: 0 0 8px hsl(var(--game-stat) / 0.6);
+  }
+
+  /* Floating Animation */
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Input styles */
+  .pixel-input {
+    @apply border-2 border-border/50 bg-card/50 focus:border-primary focus:bg-card transition-all duration-300 rounded-md;
+  }
+
+  .pixel-input:focus {
+    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
+  }
+
+  /* Pixel Fade In */
+  .pixel-fade-in {
+    animation: pixelFadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes pixelFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Game Card Hover */
+  .game-card-detail {
+    @apply transition-all duration-300 hover:scale-105;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+  .game-card {
+    @apply transition-all duration-300 ;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  .game-card:hover {
+    box-shadow: var(--shadow-glow), var(--shadow-card);
+  }
+  .game-card-detail:hover {
+    box-shadow: var(--shadow-glow), var(--shadow-card);
+  }
+}
