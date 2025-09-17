@@ -21,7 +21,7 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Prepare Zoho Forms payload
+    // Prepare form submission to support@bewgames.com
     const payload = {
       Name: {
         Name_First: formData.name.split(" ")[0] || formData.name,
@@ -31,7 +31,8 @@ const ContactSection = () => {
       MultiLine: formData.message,
       Subject: formData.subject,
       REFERRER_NAME: "https://www.bewgames.com/",
-      ZS_IF_DOMAIN: "https://www.bewgames.com/"
+      ZS_IF_DOMAIN: "https://www.bewgames.com/",
+      to_email: "support@bewgames.com"
     };
 
     try {
@@ -91,128 +92,79 @@ const ContactSection = () => {
           <div className="h-1 w-24 bg-gradient-primary rounded-full mx-auto" />
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Contact Info */}
-          <div className="lg:col-span-1 space-y-6">
-            <Card className="game-card border-0">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <MessageSquare className="w-6 h-6 text-primary" />
-                  Contact Information
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <Mail className="w-5 h-5 text-primary mt-1" />
-                  <div>
-                    <h4 className="font-semibold">Email</h4>
-                    <p className="text-muted-foreground text-sm">contact@bewgames.com</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <Phone className="w-5 h-5 text-primary mt-1" />
-                  <div>
-                    <h4 className="font-semibold">Phone</h4>
-                    <p className="text-muted-foreground text-sm">+1 (555) 123-4567</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <MapPin className="w-5 h-5 text-primary mt-1" />
-                  <div>
-                    <h4 className="font-semibold">Location</h4>
-                    <p className="text-muted-foreground text-sm">San Francisco, CA</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Response Time */}
-            <Card className="game-card border-0">
-              <CardContent className="p-6">
-                <h4 className="font-semibold mb-2">Response Time</h4>
-                <p className="text-muted-foreground text-sm">
-                  We typically respond within 24 hours during business days.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
+        <div className="max-w-2xl mx-auto">
           {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <Card className="game-card border-0">
-              <CardHeader>
-                <CardTitle>Send us a message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Name *</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        placeholder="Your name"
-                        className="pixel-input"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email *</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        placeholder="your@email.com"
-                        className="pixel-input"
-                      />
-                    </div>
-                  </div>
-
+          <Card className="game-card border-0">
+            <CardHeader>
+              <CardTitle>Send us a message</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="subject">Subject *</Label>
+                    <Label htmlFor="name">Name *</Label>
                     <Input
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
+                      id="name"
+                      name="name"
+                      value={formData.name}
                       onChange={handleChange}
                       required
-                      placeholder="What's this about?"
+                      placeholder="Your name"
                       className="pixel-input"
                     />
                   </div>
-
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
+                    <Label htmlFor="email">Email *</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
                       onChange={handleChange}
                       required
-                      placeholder="Tell us more about your inquiry..."
-                      className="min-h-[120px] pixel-input"
+                      placeholder="your@email.com"
+                      className="pixel-input"
                     />
                   </div>
+                </div>
 
-                  <Button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className="w-full md:w-auto pixel-button"
-                  >
-                    <Send className="mr-2 w-4 h-4" />
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
+                <div className="space-y-2">
+                  <Label htmlFor="subject">Subject *</Label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    placeholder="What's this about?"
+                    className="pixel-input"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message">Message *</Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    placeholder="Tell us more about your inquiry..."
+                    className="min-h-[120px] pixel-input"
+                  />
+                </div>
+
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full md:w-auto pixel-button"
+                >
+                  <Send className="mr-2 w-4 h-4" />
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

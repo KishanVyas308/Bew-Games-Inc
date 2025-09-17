@@ -13,80 +13,86 @@ const games = [
   {
     id: 1,
     title: "Survival RPG: Open World",
-    description: "Retro 2D pixel RPG where you explore a medieval world, craft houses, tools, and armor, mine dungeons, fight dragons and dinosaurs, and unlock recipes in an offline adventure.",
+    description: "Retro 2D pixel RPG where you explore a medieval world, craft houses, tools, and armor, mine dungeons, fight dragons and dinosaurs.",
     icon: srpgOpenWorldIcon,
     features: ["Medieval Open World", "Crafting & Mining", "Dragon & Dinosaur Fights", "Offline Retro RPG"],
     rating: 4.5,
     downloads: "1M+",
     color: "from-purple-500 to-pink-400",
     playStoreLink: "https://play.google.com/store/apps/details?id=com.bewgames.openworld",
-    appStoreLink: "https://apps.apple.com/us/app/survival-rpg-open-world-pixel/id1583465544"
+    appStoreLink: "https://apps.apple.com/us/app/survival-rpg-open-world-pixel/id1583465544",
+    trailerVideoId: "8SLYVW3XkFk"
   },
   {
     id: 2,
     title: "Survival RPG 1: Lost Treasure",
-    description: "Stranded on a mysterious island, you must survive by exploring dungeons, crafting tools, solving puzzles, and discovering hidden treasures in this pixel retro RPG.",
+    description: "Stranded on a mysterious island, you must survive by exploring dungeons, crafting tools, solving puzzles, and discovering hidden treasures.",
     icon: srpg1Icon,
     features: ["Island Survival", "40+ Tools to Craft", "Dungeons & Treasures", "Offline Pixel RPG"],
     rating: 4.5,
     downloads: "5M+",
     color: "from-green-500 to-emerald-400",
     playStoreLink: "https://play.google.com/store/apps/details?id=com.bewgames.survivaladventure",
-    appStoreLink: "https://apps.apple.com/us/app/survival-rpg-1-treasure-hunt/id1228652601"
+    appStoreLink: "https://apps.apple.com/us/app/survival-rpg-1-treasure-hunt/id1228652601",
+    trailerVideoId: "ZpsU9gm9Fk0"
   },
   {
     id: 3,
     title: "Survival RPG 2: Ruins of Lost Temple",
-    description: "Sequel to Lost Treasure. Explore deserts, jungles, forests, and ancient temples, craft tools, solve puzzles, and fight monsters while uncovering hidden treasures.",
+    description: "Sequel to Lost Treasure. Explore deserts, jungles, forests, and ancient temples, craft tools, solve puzzles, and fight monsters.",
     icon: srpg2Icon,
     features: ["7 Story Chapters", "180 Items to Collect", "Treasure Maps & Hidden Objects", "Fight 35+ Monsters"],
     rating: 4.6,
     downloads: "1M+",
     color: "from-yellow-500 to-orange-400",
     playStoreLink: "https://play.google.com/store/apps/details?id=com.bewgames.templeruins",
-    appStoreLink: "https://apps.apple.com/us/app/survival-rpg-2-temple-ruins-2d/id1330199727"
+    appStoreLink: "https://apps.apple.com/us/app/survival-rpg-2-temple-ruins-2d/id1330199727",
+    trailerVideoId: "0Raan83BzMg"
   },
   {
     id: 4,
     title: "Survival RPG 3: Lost in Time",
-    description: "Travel through Medieval, Jurassic, and Future timelines. Explore castles, dungeons, and fortresses, craft armors, and fight monsters in this retro time-travel RPG.",
+    description: "Travel through Medieval, Jurassic, and Future timelines. Explore castles, dungeons, and fortresses, craft armors, and fight monsters.",
     icon: srpg3Icon,
     features: ["3 Timelines (Past, Jurassic, Future)", "50+ Dungeons", "85 Crafting Recipes", "40+ Monsters"],
     rating: 4.6,
     downloads: "1M+",
     color: "from-red-500 to-rose-400",
     playStoreLink: "https://play.google.com/store/apps/details?id=com.bewgames.lostintime",
-    appStoreLink: "https://apps.apple.com/us/app/survival-rpg-3-lost-time-warp/id1491950193"
+    appStoreLink: "https://apps.apple.com/us/app/survival-rpg-3-lost-time-warp/id1491950193",
+    trailerVideoId: "QR7zoOYHdug"
   },
   {
     id: 5,
     title: "Survival RPG 4: Haunted Manor",
-    description: "Unravel the mystery of a haunted manor by exploring spooky places, solving puzzles, traveling through time, and finding a magical artifact in this eerie pixel RPG.",
+    description: "Unravel the mystery of a haunted manor by exploring spooky places, solving puzzles, traveling through time, and finding a magical artifact.",
     icon: srpg4Icon,
     features: ["Haunted House Mystery", "7 Story Chapters", "Time Travel", "Hidden Objects & Puzzles"],
     rating: 4.7,
     downloads: "100K+",
     color: "from-gray-700 to-gray-500",
     playStoreLink: "https://play.google.com/store/apps/details?id=com.bewgames.hauntedmanor",
-    appStoreLink: "https://apps.apple.com/us/app/survival-rpg-4-haunted-manor/id1624256421"
+    appStoreLink: "https://apps.apple.com/us/app/survival-rpg-4-haunted-manor/id1624256421",
+    trailerVideoId: "-rK0iSRMpOo"
   },
   {
     id: 6,
     title: "Survival RPG 5: Pirate Adventure",
-    description: "Set sail in a pirate-themed world. Explore islands, ships, and caves, complete quests, fight monsters with swords and spells, and discover epic treasures.",
+    description: "Set sail in a pirate-themed world. Explore islands, ships, and caves, complete quests, fight monsters with swords and spells.",
     icon: srpg5Icon,
     features: ["Pirate Adventure", "Ocean & Island Exploration", "Combat with Swords & Spells", "Quests & Crafting"],
     rating: 4.8,
     downloads: "50K+",
     color: "from-blue-500 to-cyan-400",
     playStoreLink: "https://play.google.com/store/apps/details?id=com.bewgames.pirate",
-    appStoreLink: "https://apps.apple.com/us/app/survival-rpg-pirate-adventure/id6468485843"
+    appStoreLink: "https://apps.apple.com/us/app/survival-rpg-pirate-adventure/id6468485843",
+    trailerVideoId: "pHvihEccFaE"
   }
 ];
 
 const GameShowcase = () => {
   return (
-    <section id="games" className="py-20 px-6">
+    <section id="games" className="py-10 px-6">
       <div className="container mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
@@ -102,9 +108,9 @@ const GameShowcase = () => {
         {/* Games Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {games.map((game) => (
-            <Card key={game.id} className="game-card-detail border-0 overflow-hidden group">
-              <CardContent className="p-0">
-                <div className="p-8">
+            <Card key={game.id} className="game-card-detail border-0 overflow-hidden group flex flex-col">
+              <CardContent className="p-0 flex flex-col h-full">
+                <div className="p-8 flex flex-col flex-grow">
                   {/* Game Icon & Title */}
                   <div className="flex items-start gap-6 mb-6">
                     <div className="relative">
@@ -138,6 +144,22 @@ const GameShowcase = () => {
                     {game.description}
                   </p>
 
+                  {/* Game Trailer */}
+                  {game.trailerVideoId !== "placeholder1" && game.trailerVideoId !== "placeholder2" && game.trailerVideoId !== "placeholder3" && game.trailerVideoId !== "placeholder4" && game.trailerVideoId !== "placeholder5" && (
+                    <div className="mb-6">
+                      <h4 className="font-semibold mb-3 text-secondary">Game Trailer:</h4>
+                      <div className="relative w-full h-0 pb-[56.25%] rounded-lg overflow-hidden">
+                        <iframe
+                          className="absolute top-0 left-0 w-full h-full"
+                          src={`https://www.youtube.com/embed/${game.trailerVideoId}`}
+                          title={`${game.title} Trailer`}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      </div>
+                    </div>
+                  )}
+
                   {/* Features */}
                   <div className="mb-6">
                     <h4 className="font-semibold mb-3 text-secondary">Key Features:</h4>
@@ -152,7 +174,7 @@ const GameShowcase = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex w-full gap-3">
+                  <div className="flex w-full gap-3 mt-auto">
                     <Link className="w-full" target="_blank" to={game.playStoreLink}>
                       <Button className="pixel-button w-full flex items-center space-x-2">
                         <span>Play Store</span>

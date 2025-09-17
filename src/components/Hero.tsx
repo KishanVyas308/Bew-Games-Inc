@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Star } from "lucide-react";
-import banner from "@/assets/banner.webp";
+import srpg5Icon from "@/assets/srpg-5-official-icon.png";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 py-20">
+    <section className="relative min-h-screen flex items-center mt-20 md:mt-20 lg:mt-6 justify-center overflow-hidden px-6 py-10">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pixel-grid opacity-20" />
 
@@ -52,38 +52,29 @@ const Hero = () => {
           {/* Stats */}
           <div className="flex flex-wrap gap-8 items-center">
             <div className="text-center">
-              <div className="text-4xl text-secondary font-bold ">18M+</div>
+              <div className="text-4xl text-secondary font-bold ">19M+</div>
               <div className="text-muted-foreground font-medium">Downloads</div>
             </div>
             <div className="text-center">
               <div className="flex items-center gap-1 justify-center">
-                {[...Array(5)].map((_, i) => (
+                {[...Array(4)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 fill-game-stat text-game-stat" />
                 ))}
+                <Star className="w-6 h-6 fill-game-stat/50 text-game-stat" />
               </div>
-              <div className="text-muted-foreground font-medium">All Games Rated</div>
+              <div className="text-muted-foreground font-medium">4.5+ Stars Rated</div>
             </div>
           </div>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="pixel-button group">
-              Explore Games
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="outline" size="lg" className="pixel-button">
-              <Download className="mr-2 w-4 h-4" />
-              Download Now
-            </Button>
-          </div>
+          {/* CTAs - Removed as requested */}
         </div>
 
         {/* Hero Image */}
         <div className="relative">
           <div className="relative game-card rounded-2xl p-8 ">
             <img
-              src={banner}
-              alt="Survival RPG Game Scene"
+              src={srpg5Icon}
+              alt="Survival RPG 5: Pirate Adventure"
               className="w-full h-auto rounded-xl"
             />
 
@@ -92,17 +83,17 @@ const Hero = () => {
           </div>
 
           {/* Floating Game Stats */}
-          <div className="absolute -top-6 -right-6 game-card rounded-xl p-4 animate-slide-up">
+          <div className="absolute -top-6 -right-6 game-card rounded-xl p-4 animate-slide-up cursor-pointer" onClick={() => document.getElementById('games')?.scrollIntoView({ behavior: 'smooth' })}>
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary">5+</div>
+              <div className="text-2xl font-bold text-primary">+5</div>
               <div className="text-sm text-muted-foreground">Epic Games</div>
             </div>
           </div>
 
-          <div className="absolute -bottom-6 -left-6 game-card rounded-xl p-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <div className="absolute -bottom-6 -left-6 game-card rounded-xl p-4 animate-slide-up cursor-pointer" style={{ animationDelay: '0.2s' }} onClick={() => document.getElementById('games')?.scrollIntoView({ behavior: 'smooth' })}>
             <div className="text-center">
-              <div className="text-2xl font-bold text-secondary">RPG</div>
-              <div className="text-sm text-muted-foreground">Adventure</div>
+              <div className="text-2xl font-bold text-secondary">Latest</div>
+              <div className="text-sm text-muted-foreground">Game</div>
             </div>
           </div>
         </div>
