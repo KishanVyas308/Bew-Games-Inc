@@ -192,35 +192,6 @@ const GameShowcase = () => {
           ))}
         </div>
 
-        {/* YouTube Section */}
-        <div className="text-center game-card rounded-2xl p-8 mb-12">
-          <h3 className="text-2xl font-bold mb-4">Watch Our Game Trailers</h3>
-          <p className="text-muted-foreground mb-6">
-            Experience the adventure before you play
-          </p>
-
-          {/* YouTube Video Embed */}
-          <div className="max-w-4xl mx-auto mb-6">
-            <div className="relative w-full h-0 pb-[56.25%] rounded-lg overflow-hidden">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/8SLYVW3XkFk"
-                title="Survival RPG: Open World Trailer"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          </div>
-
-          <Button
-            variant="outline"
-            className="pixel-button"
-            onClick={() => window.open('https://www.youtube.com/channel/UC1-5-Hd4wAT5mTd6K6kthzg', '_blank')}
-          >
-            <ExternalLink className="mr-2 w-4 h-4" />
-            Visit Our YouTube Channel
-          </Button>
-        </div>
       </div>
     </section>
   );

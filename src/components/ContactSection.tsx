@@ -87,7 +87,7 @@ const ContactSection = () => {
             Get In <span className="text-primary glow-text">Touch</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Have questions about our games or want to collaborate? We'd love to hear from you!
+            Have questions about our games?
           </p>
           <div className="h-1 w-24 bg-gradient-primary rounded-full mx-auto" />
         </div>

@@ -1,0 +1,2 @@
+# Bew Games app-ads.txt
+# Update this file as needed for your ad networks

@@ -3,8 +3,9 @@ import { ArrowRight, Download, Star } from "lucide-react";
 import srpg5Icon from "@/assets/srpg-5-official-icon.png";
 
 const Hero = () => {
+  
   return (
-    <section className="relative min-h-screen flex items-center mt-20 md:mt-20 lg:mt-6 justify-center overflow-hidden px-6 py-10">
+    <section id="home" className="relative min-h-screen flex items-center mt-20 md:mt-20 lg:mt-6 justify-center overflow-hidden px-6 py-10">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pixel-grid opacity-20" />
 
@@ -70,30 +71,33 @@ const Hero = () => {
         </div>
 
         {/* Hero Image */}
-        <div className="relative">
-          <div className="relative game-card rounded-2xl p-8 ">
-            <img
-              src={srpg5Icon}
-              alt="Survival RPG 5: Pirate Adventure"
-              className="w-full h-auto rounded-xl"
-            />
-
-            {/* Overlay Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-glow rounded-2xl pointer-events-none" />
+        <div className="relative flex justify-center items-center min-h-[500px]">
+          <div className="relative game-card w-80 md:w-96 rounded-2xl p-10 shadow-lg transform transition-transform hover:scale-105 duration-300">
+            <div className="relative z-10 flex justify-center">
+              <img
+                src={srpg5Icon}
+                alt="Survival RPG 5: Pirate Adventure"
+                className="w-56 h-56 mx-auto rounded-xl shadow-md animate-float"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-glow opacity-80 rounded-2xl animate-pulse-slow pointer-events-none" />
           </div>
 
-          {/* Floating Game Stats */}
-          <div className="absolute -top-6 -right-6 game-card rounded-xl p-4 animate-slide-up cursor-pointer" onClick={() => document.getElementById('games')?.scrollIntoView({ behavior: 'smooth' })}>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">+5</div>
-              <div className="text-sm text-muted-foreground">Epic Games</div>
+          {/* Floating Game Stats - Better positioned */}
+          <div className="absolute top-8 right-4 md:right-8 game-card rounded-xl p-4 shadow-lg animate-slide-up backdrop-blur-sm hover:bg-card/80 transition-all cursor-pointer border border-primary/20" 
+               onClick={() => document.getElementById('games')?.scrollIntoView({ behavior: 'smooth' })}>
+            <div className="text-center min-w-[60px]">
+              <div className="text-2xl font-bold text-primary mb-1">+5</div>
+              <div className="text-xs font-medium text-muted-foreground leading-tight">Epic<br/>Games</div>
             </div>
           </div>
 
-          <div className="absolute -bottom-6 -left-6 game-card rounded-xl p-4 animate-slide-up cursor-pointer" style={{ animationDelay: '0.2s' }} onClick={() => document.getElementById('games')?.scrollIntoView({ behavior: 'smooth' })}>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-secondary">Latest</div>
-              <div className="text-sm text-muted-foreground">Game</div>
+          <div className="absolute bottom-8 left-4 md:left-8 game-card rounded-xl p-4 shadow-lg animate-slide-up backdrop-blur-sm hover:bg-card/80 transition-all  cursor-pointer border border-secondary/20" 
+               style={{ animationDelay: '0.2s' }} 
+               onClick={() => document.getElementById('games')?.scrollIntoView({ behavior: 'smooth' })}>
+            <div className="text-center min-w-[60px]">
+              <div className="text-2xl font-bold text-secondary mb-1">Latest</div>
+              <div className="text-xs font-medium text-muted-foreground leading-tight">Game</div>
             </div>
           </div>
         </div>

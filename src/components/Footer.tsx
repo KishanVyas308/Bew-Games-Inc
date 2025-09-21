@@ -3,6 +3,7 @@ import { Mail, Youtube, Gamepad2, Heart, Facebook, Instagram } from "lucide-reac
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+
   return (
     <footer className="border-t border-border mt-20">
       <div className="container mx-auto px-6 py-12">
@@ -28,28 +29,18 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-secondary">Quick Links</h4>
             <div className="space-y-2">
               {[
-                { label: "Home", href: "/" },
-                { label: "Games", href: "#games" },
-                { label: "Contact", href: "#contact" },
+                { label: "Home", href: "/#home" },
+                { label: "Games", href: "/#games" },
+                { label: "Contact", href: "/#contact" },
                 { label: "Privacy Policy", href: "/privacy-policy" },
               ].map((link) => (
-                link.href.startsWith('#') ? (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="block text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.label}
-                    to={link.href}
-                    className="block text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                )
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  className="block text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </Link>
               ))}
             </div>
           </div>
