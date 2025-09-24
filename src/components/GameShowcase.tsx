@@ -92,10 +92,10 @@ const games = [
 
 const GameShowcase = () => {
   return (
-    <section id="games" className="py-10 px-6">
+    <section id="games" className="pb-10 px-6">
       <div className="container mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-12 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
             Our <span className="text-primary ">Epic Games</span>
           </h2>
