@@ -206,7 +206,7 @@ const ContactSection = () => {
                     className="flex-1 pixel-button"
                   >
                     <Send className="mr-2 w-4 h-4" />
-                    {isSubmitting ? "Opening Email..." : "Open Email Client"}
+                    {isSubmitting ? "Sending Email..." : "Send Email"}
                   </Button>
                   
                   <Button 
