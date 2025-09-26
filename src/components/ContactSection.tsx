@@ -41,17 +41,44 @@ const ContactSection = () => {
       // Initialize EmailJS
       emailjs.init(publicKey);
 
-      // Prepare template parameters
+      // Prepare template parameters - Ensures email goes to support@bewgames.com
       const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
+        // Explicit recipient (this should be used in template To field)
         to_email: 'support@bewgames.com',
+        
+        // Customer information
+        user_name: formData.name,
+        user_email: formData.email,
+        user_subject: formData.subject,
+        user_message: formData.message,
+        
+        // Email headers
+        reply_to: formData.email,
+        from_name: 'Bew Games Contact Form',
+        
+        // For template compatibility
+        from_name_customer: formData.name,
+        from_email: formData.email,
+        subject: `${formData.subject}`,
+        message: `From: ${formData.name} (${formData.email})\n\nSubject: ${formData.subject}\n\nMessage:\n${formData.message}`,
+        to_name: 'Bew Games Support Team',
       };
 
-      // Send email using EmailJS
-      const result = await emailjs.send(serviceId, templateId, templateParams);
+      console.log('Sending email with params:', templateParams); // Debug log
+
+      // Send email using EmailJS with explicit configuration
+      const result = await emailjs.send(
+        serviceId, 
+        templateId, 
+        templateParams,
+        {
+          publicKey: publicKey,
+          // Force email to be sent to support@bewgames.com
+          limitRate: {
+            throttle: 1000, // 1 second between emails
+          }
+        }
+      );
 
       if (result.status === 200) {
         toast({

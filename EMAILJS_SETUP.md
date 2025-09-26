@@ -17,28 +17,39 @@ To enable the contact form, you need to set up EmailJS (free service).
 
 ### Step 3: Create Email Template
 1. Go to **Email Templates** → **Create New Template**
-2. Set up the template with these variables:
+2. **IMPORTANT**: Set up the template settings correctly:
 
-**Subject:** `New Contact: {{subject}}`
+**Template Settings:**
+- **To Email**: `support@bewgames.com` (your business email)
+- **From Name**: `Bew Games Contact Form`
+- **From Email**: `{{user_email}}` (this will be the customer's email)
+- **Reply To**: `{{user_email}}` (so you can reply directly to customer)
+
+**Subject:** `New Contact from {{user_name}}: {{user_subject}}`
 
 **Content:**
 ```
-Hello,
+Hello Bew Games Team,
 
 You have received a new message from your website contact form:
 
-Name: {{from_name}}
-Email: {{from_email}}
-Subject: {{subject}}
+Name: {{user_name}}
+Email: {{user_email}}
+Subject: {{user_subject}}
 
 Message:
-{{message}}
+{{user_message}}
+
+---
+You can reply directly to this email to respond to the customer.
 
 Best regards,
-Bew Games Contact Form
+Bew Games Contact Form System
 ```
 
 3. Copy the **Template ID** (e.g., `template_xxxxxxx`)
+
+**⚠️ CRITICAL**: Make sure the "To Email" field in your template is set to `support@bewgames.com`, NOT a variable!
 
 ### Step 4: Get Public Key
 1. Go to **Account** → **API Keys**
