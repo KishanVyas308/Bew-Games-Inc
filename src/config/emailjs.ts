@@ -3,9 +3,9 @@
 
 export const emailjsConfig = {
   // Get these from https://www.emailjs.com/
-  serviceId: 'service_hppeor2',     // From Email Services section
-  templateId: 'template_i6su8r7',   // From Email Templates section
-  publicKey: 'CYqpjipdAyAt7avuM',     // From Account > API Keys section
+  serviceId: 'service_3nnn19t',     // From Email Services section
+  templateId: 'template_3dmaalu',   // From Email Templates section
+  publicKey: '86uQHP1L4hA4_0QWU',     // From Account > API Keys section
 };
 
 // Instructions to set up EmailJS:
