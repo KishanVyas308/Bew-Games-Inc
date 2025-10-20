@@ -42,6 +42,20 @@ conversantmedia.com, 100714, RESELLER, 03113cd04947736d
 bidmachine.io,102,RESELLER
 bidmachine.io,60,RESELLER
 bidmachine.io,36,RESELLER
+intellectscoop.com, 644, DIRECT
+loopme.com, 15675, RESELLER, 6c8d5f95897a5a3b
+indexexchange.com, 211613, RESELLER, 50b1c356f2c5c8fc
+siprocalads.com, FDEE7O33SD2B5773S1HU6H5IM8, RESELLER
+zetaglobal.net, 633, RESELLER
+ushareit.com, LC98ffe3f38a46423e, RESELLER
+bematterfull.com, 792278057361, RESELLER
+yeahmobi.com, 5135302, RESELLER
+eskimi.com, 2020001189, RESELLER
+adagio.io, 1554, RESELLER
+rubiconproject.com, 19116, RESELLER, 0bfd66d529a55807
+openx.com, 558899373, RESELLER, 6a698e2ec38604c6
+filmzie.com, 5071, DIRECT
+safex.tv, 5071, DIRECT
 
 #install.com
 rubiconproject.com, 22516, RESELLER, 0bfd66d529a55807
